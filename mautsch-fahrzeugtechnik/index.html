@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mautsch Fahrzeugtechnik &amp; Tuning · BMW &amp; Mercedes Spezialist Hildesheim</title>
+  <meta name="description" content="Mautsch Fahrzeugtechnik & Tuning in Hildesheim – Ihr Meisterbetrieb für BMW & Mercedes. Inspektion nach Herstellervorgaben, Reparatur, Tuning & HiFi, Fahrwerk und Reifenservice." />
+  <meta name="theme-color" content="#0a0b0e" />
+
+  <meta property="og:title" content="Mautsch Fahrzeugtechnik & Tuning" />
+  <meta property="og:description" content="Meisterbetrieb für BMW & Mercedes in Hildesheim. Service nach Herstellervorgaben, Tuning, Fahrwerk & mehr." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preload" href="fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Motion + smooth scroll libraries (vendored locally, deferred so they load before the module) -->
+  <script defer src="js/vendor/gsap.min.js"></script>
+  <script defer src="js/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="js/vendor/lenis.umd.js"></script>
+
+  <!-- Three.js for the 3D low-poly car (vendored locally) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./js/vendor/three.module.js",
+      "three/addons/": "./js/vendor/three/addons/"
+    }
+  }
+  </script>
+
+  <script type="module" src="js/scene.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__mark">M</div>
+      <div class="preloader__name">MAUTSCH<span>Fahrzeugtechnik &amp; Tuning</span></div>
+      <div class="preloader__bar"><span id="preloaderBar"></span></div>
+      <div class="preloader__pct" id="preloaderPct">0%</div>
+    </div>
+  </div>
+
+  <!-- ===== Custom cursor (desktop) ===== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- ===== Persistent 3D canvas ===== -->
+  <div class="scene" id="scene" aria-hidden="true">
+    <canvas id="car-canvas"></canvas>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" aria-label="Mautsch Fahrzeugtechnik Startseite">
+      <span class="nav__brand-mark">M</span>
+      <span class="nav__brand-text">MAUTSCH<small>Fahrzeugtechnik</small></span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+      <a href="#leistungen" data-link>Leistungen</a>
+      <a href="#marken" data-link>Marken</a>
+      <a href="#ablauf" data-link>Ablauf</a>
+      <a href="#werkstatt" data-link>Werkstatt</a>
+      <a href="#kontakt" data-link>Kontakt</a>
+    </nav>
+    <a href="tel:+4951211772078" class="btn btn--sm nav__cta" data-magnetic>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      Termin
+    </a>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#leistungen" data-link>Leistungen</a>
+    <a href="#marken" data-link>Marken</a>
+    <a href="#ablauf" data-link>Ablauf</a>
+    <a href="#werkstatt" data-link>Werkstatt</a>
+    <a href="#kontakt" data-link>Kontakt</a>
+    <a href="tel:+4951211772078" class="btn">Termin anfragen</a>
+  </div>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="hero section" id="hero">
+      <div class="hero__eyebrow reveal-up">
+        <span class="dot"></span> Meisterbetrieb · Hildesheim
+      </div>
+      <h1 class="hero__title">
+        <span class="line"><span>Präzision für</span></span>
+        <span class="line"><span class="accent">BMW &amp; Mercedes.</span></span>
+      </h1>
+      <p class="hero__sub reveal-up">
+        Fahrzeugtechnik &amp; Tuning auf Meisterniveau. Service nach Herstellervorgaben,
+        kompromisslose Qualität – und das zu fairen Preisen.
+      </p>
+      <div class="hero__cta reveal-up">
+        <a href="#kontakt" class="btn btn--primary" data-magnetic data-link>
+          Termin anfragen
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#leistungen" class="btn btn--ghost" data-magnetic data-link>Leistungen entdecken</a>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scrollen</span>
+        <div class="hero__scroll-line"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ===== Brand marquee ===== -->
+    <section class="marquee" aria-label="Marken und Partner">
+      <div class="marquee__track">
+        <span>BMW</span><i>·</i><span>Mercedes-Benz</span><i>·</i><span>M Performance</span><i>·</i><span>AMG</span><i>·</i><span>VOGTLAND Autosport</span><i>·</i><span>Tuning &amp; HiFi</span><i>·</i>
+        <span>BMW</span><i>·</i><span>Mercedes-Benz</span><i>·</i><span>M Performance</span><i>·</i><span>AMG</span><i>·</i><span>VOGTLAND Autosport</span><i>·</i><span>Tuning &amp; HiFi</span><i>·</i>
+      </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="stats section">
+      <div class="stats__grid">
+        <div class="stat reveal-up">
+          <div class="stat__num"><span data-count="2">0</span></div>
+          <div class="stat__label">Kernmarken im Fokus<br>BMW &amp; Mercedes</div>
+        </div>
+        <div class="stat reveal-up">
+          <div class="stat__num"><span data-count="100">0</span><i>%</i></div>
+          <div class="stat__label">Service nach<br>Herstellervorgaben</div>
+        </div>
+        <div class="stat reveal-up">
+          <div class="stat__num"><span data-count="6">0</span><i>+</i></div>
+          <div class="stat__label">Leistungsbereiche<br>rund ums Fahrzeug</div>
+        </div>
+        <div class="stat reveal-up">
+          <div class="stat__num">Meister</div>
+          <div class="stat__label">Geführter<br>Fachbetrieb</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Leistungen ===== -->
+    <section class="section services" id="leistungen">
+      <div class="section__head">
+        <div class="section__eyebrow reveal-up"><span class="dot"></span> Leistungen</div>
+        <h2 class="section__title reveal-up">Alles rund ums Fahrzeug –<br><span class="accent">aus einer Meisterhand.</span></h2>
+        <p class="section__lead reveal-up">Von der Inspektion bis zum individuellen Tuning. Wir kombinieren Herstellerstandard mit echtem Handwerk.</p>
+      </div>
+
+      <div class="services__grid">
+        <article class="card reveal-up" data-tilt>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+          </div>
+          <h3>Inspektion</h3>
+          <p>Wartung exakt nach Herstellervorgaben inkl. Online-Serviceeintrag beim Hersteller – die Garantie bleibt erhalten.</p>
+          <span class="card__index">01</span>
+        </article>
+
+        <article class="card reveal-up" data-tilt>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3>Reparatur</h3>
+          <p>Mechanik, Elektronik und Diagnose. Wir finden den Fehler und beheben ihn fachgerecht – transparent kalkuliert.</p>
+          <span class="card__index">02</span>
+        </article>
+
+        <article class="card reveal-up card--accent" data-tilt>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg>
+          </div>
+          <h3>Tuning &amp; HiFi</h3>
+          <p>Mehr Leistung, mehr Sound, mehr Charakter. Individuelle Optimierung von Motor, Optik und Soundsystem.</p>
+          <span class="card__index">03</span>
+        </article>
+
+        <article class="card reveal-up" data-tilt>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+          </div>
+          <h3>Fahrwerk</h3>
+          <p>Sportlich, komfortabel oder tiefergelegt – Fahrwerke von <strong>VOGTLAND Autosport</strong>, präzise eingestellt.</p>
+          <span class="card__index">04</span>
+        </article>
+
+        <article class="card reveal-up" data-tilt>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="m12 3 0 0M21 12l0 0M12 21l0 0M3 12l0 0M5.6 5.6l2.1 2.1M18.4 5.6l-2.1 2.1M18.4 18.4l-2.1-2.1M5.6 18.4l2.1-2.1"/></svg>
+          </div>
+          <h3>Reifenservice</h3>
+          <p>Reifenwechsel, Einlagerung, Auswuchten und Beratung zur richtigen Bereifung für jede Jahreszeit.</p>
+          <span class="card__index">05</span>
+        </article>
+
+        <article class="card reveal-up" data-tilt>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+          </div>
+          <h3>Diagnose &amp; Elektronik</h3>
+          <p>Herstellergenaue Fehlerdiagnose, Codierungen und Steuergeräte – damit moderne Technik wieder rund läuft.</p>
+          <span class="card__index">06</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Marken ===== -->
+    <section class="section brands" id="marken">
+      <div class="section__head">
+        <div class="section__eyebrow reveal-up"><span class="dot"></span> Spezialisierung</div>
+        <h2 class="section__title reveal-up">Zwei Marken.<br><span class="accent">Volle Hingabe.</span></h2>
+      </div>
+      <div class="brands__grid">
+        <article class="brand-panel reveal-up">
+          <div class="brand-panel__logo">
+            <svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M50 16 A34 34 0 0 1 84 50 L50 50 Z" fill="currentColor" opacity="0.12"/><path d="M50 84 A34 34 0 0 1 16 50 L50 50 Z" fill="currentColor" opacity="0.12"/></svg>
+          </div>
+          <h3>BMW</h3>
+          <p>Freude am Fahren beginnt mit dem richtigen Service. Inspektion, Diagnose, M&nbsp;Performance-Komponenten und Tuning – kompromisslos auf den Punkt.</p>
+          <ul class="brand-panel__list">
+            <li>Inspektion &amp; Servicerückstellung</li>
+            <li>Codierung &amp; Diagnose</li>
+            <li>Fahrwerk &amp; Leistung</li>
+          </ul>
+        </article>
+        <article class="brand-panel reveal-up">
+          <div class="brand-panel__logo">
+            <svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="3"/><path d="M50 50 L50 6 M50 50 L88 72 M50 50 L12 72" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Mercedes-Benz</h3>
+          <p>Das Beste oder nichts – auch im Service. Wir pflegen Ihren Stern nach Werksvorgabe und veredeln ihn mit AMG-Feeling und sauberem Handwerk.</p>
+          <ul class="brand-panel__list">
+            <li>Wartung nach Herstellervorgabe</li>
+            <li>Elektronik &amp; Assistenzsysteme</li>
+            <li>Optik- &amp; Sound-Tuning</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Ablauf ===== -->
+    <section class="section process" id="ablauf">
+      <div class="section__head">
+        <div class="section__eyebrow reveal-up"><span class="dot"></span> So läuft's</div>
+        <h2 class="section__title reveal-up">In vier Schritten<br><span class="accent">zurück auf die Straße.</span></h2>
+      </div>
+      <div class="process__list">
+        <div class="step reveal-up">
+          <div class="step__no">01</div>
+          <h3>Anfrage</h3>
+          <p>Per Telefon oder WhatsApp melden – wir besprechen Ihr Anliegen und finden einen Termin.</p>
+        </div>
+        <div class="step reveal-up">
+          <div class="step__no">02</div>
+          <h3>Diagnose</h3>
+          <p>Herstellergenaue Analyse Ihres Fahrzeugs. Sie erhalten eine ehrliche, transparente Einschätzung.</p>
+        </div>
+        <div class="step reveal-up">
+          <div class="step__no">03</div>
+          <h3>Umsetzung</h3>
+          <p>Service, Reparatur oder Tuning – ausgeführt vom Meisterbetrieb mit Qualitätsteilen.</p>
+        </div>
+        <div class="step reveal-up">
+          <div class="step__no">04</div>
+          <h3>Abholung</h3>
+          <p>Ihr Fahrzeug ist startklar. Auf Wunsch mit dokumentiertem Serviceeintrag beim Hersteller.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Werkstatt / About ===== -->
+    <section class="section about" id="werkstatt">
+      <div class="about__grid">
+        <div class="about__text reveal-up">
+          <div class="section__eyebrow"><span class="dot"></span> Der Betrieb</div>
+          <h2 class="section__title">Handwerk, das man <span class="accent">hört &amp; spürt.</span></h2>
+          <p>Mautsch Fahrzeugtechnik &amp; Tuning steht in Hildesheim für ehrliche Arbeit auf höchstem Niveau. Als Meisterbetrieb verbinden wir Werksqualität mit der Leidenschaft fürs Detail – egal ob alltägliche Inspektion oder kompromissloses Tuning.</p>
+          <p>Was uns antreibt: faire Preise, klare Kommunikation und Fahrzeuge, die danach besser laufen als vorher. Genau dafür kommen unsere Kunden – und kommen wieder.</p>
+          <div class="about__partner">
+            <span>Offizieller Partner</span>
+            <strong>VOGTLAND Autosport · Fahrwerke</strong>
+          </div>
+        </div>
+        <div class="about__features reveal-up">
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3Z"/></svg>
+            <div><h4>Meisterbetrieb</h4><p>Geprüfte Qualität, dokumentierter Service.</p></div>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><h4>Herstellervorgaben</h4><p>Service ohne Garantieverlust.</p></div>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div><h4>Faire Preise</h4><p>Transparente Kalkulation, keine Überraschungen.</p></div>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+            <div><h4>Tuning-Expertise</h4><p>Leistung, Optik &amp; Sound aus einer Hand.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Kontakt ===== -->
+    <section class="section contact" id="kontakt">
+      <div class="contact__inner">
+        <div class="contact__intro reveal-up">
+          <div class="section__eyebrow"><span class="dot"></span> Kontakt</div>
+          <h2 class="section__title">Bringen Sie Ihren<br><span class="accent">Wagen zu uns.</span></h2>
+          <p class="section__lead">Termin vereinbaren, Frage stellen oder einfach vorbeikommen. Wir freuen uns auf Ihr Fahrzeug.</p>
+
+          <div class="contact__actions">
+            <a href="tel:+4951211772078" class="btn btn--primary" data-magnetic>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              05121 1772078
+            </a>
+            <a href="https://wa.me/4951211772078" class="btn btn--ghost" data-magnetic target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3-.8s-3.3-3-3.4-3.2c-.1-.2-.8-1.1-.8-2.1s.5-1.5.7-1.7c.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4l.7 1.6c0 .2.1.3 0 .5l-.3.4-.3.3c-.1.1-.2.3-.1.5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.7c.2.1.4.2.4.3.1.1.1.4-.1.9Z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+
+          <div class="contact__cards">
+            <div class="contact-card">
+              <span class="contact-card__label">Adresse</span>
+              <p>Daimlerring 39<br>31135 Hildesheim</p>
+              <a href="https://www.openstreetmap.org/search?query=Daimlerring%2039%2C%2031135%20Hildesheim" target="_blank" rel="noopener" class="contact-card__link">Route planen →</a>
+            </div>
+            <div class="contact-card">
+              <span class="contact-card__label">Öffnungszeiten</span>
+              <table class="hours">
+                <tr><th>Mo – Do</th><td>09:00–12:00 · 12:30–17:00</td></tr>
+                <tr><th>Freitag</th><td>09:00–12:00 · 12:30–15:00</td></tr>
+                <tr><th>Sa / So</th><td>geschlossen</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__map reveal-up">
+          <iframe
+            title="Standort Mautsch Fahrzeugtechnik auf der Karte"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=9.9300%2C52.1450%2C9.9700%2C52.1650&amp;layer=mapnik&amp;marker=52.1550%2C9.9500"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <a class="contact__map-link" href="https://www.openstreetmap.org/search?query=Daimlerring%2039%2C%2031135%20Hildesheim" target="_blank" rel="noopener">Größere Karte ansehen →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="nav__brand-mark">M</span>
+        <div>
+          <strong>MAUTSCH</strong>
+          <span>Fahrzeugtechnik &amp; Tuning</span>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Footernavigation">
+        <a href="#leistungen" data-link>Leistungen</a>
+        <a href="#marken" data-link>Marken</a>
+        <a href="#ablauf" data-link>Ablauf</a>
+        <a href="#werkstatt" data-link>Werkstatt</a>
+        <a href="#kontakt" data-link>Kontakt</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="tel:+4951211772078">05121 1772078</a>
+        <span>Daimlerring 39 · 31135 Hildesheim</span>
+        <a href="https://www.facebook.com/Meistermautsch/" target="_blank" rel="noopener">Facebook · @Meistermautsch</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Mautsch Fahrzeugtechnik &amp; Tuning. Alle Rechte vorbehalten.</span>
+      <span class="footer__legal"><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+    </div>
+  </footer>
+</body>
+</html>
