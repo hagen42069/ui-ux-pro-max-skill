@@ -5,19 +5,21 @@ Die Seite lädt automatisch  models/car.glb  und zeigt es als Hero-Auto an
 (automatisch zentriert, auf den Boden gestellt, passend skaliert).
 Ist keine Datei vorhanden, wird das prozedurale Low-Poly-Auto angezeigt.
 
-AKTUELLES MODELL (PLATZHALTER)
------------------------------
-car.glb ist aktuell ein Mercedes (G-Klasse / G63-Optik), web-optimiert:
-  - Original ~22 MB  ->  ~2,8 MB
-  - Geometrie DRACO-komprimiert, Texturen auf 1024px WebP reduziert
-  - ~229.000 Dreiecke
+AKTUELLES MODELL
+----------------
+car.glb ist der vom Nutzer bereitgestellte Mercedes-AMG GT
+(aus sportcar.obj + sportcar.mtl + SportCarTextures), web-optimiert:
+  - Lack auf GUNMETAL / GRAPHIT umgefärbt (#3a414e)
+  - Felgen, Reifen, Carbon, Kühlergrill, Bremsen mit Original-Texturen
+  - Texturen auf 1024px WebP, Geometrie DRACO-komprimiert
+  - ~4,8 MB (mit Texturen)  ->  ~0,6 MB
 
-WICHTIG – LIZENZ:
-Das Modell stammt aus einem öffentlichen GitHub-Repo (Jazua6969/3d-showcase),
-das KEINE Lizenzdatei enthält. Es dient hier nur als PLATZHALTER, damit du
-ein echtes Mercedes-Modell siehst. Vor dem LIVE-Gang einer echten Kundenseite
-unbedingt durch ein Modell mit geklärter Lizenz ersetzen (z. B. dein
-gekauftes/lizensiertes CGTrader-Modell des E63 S).
+LIZENZ: Quelle vom Nutzer geliefert – bitte vor dem Live-Gang sicherstellen,
+dass die Nutzungsrechte für die Website geklärt sind.
+
+LACKFARBE ÄNDERN: in js/scene.js gibt es dafür keinen Schalter, da die Farbe
+im Modell steckt. Umfärben über das Re-Color-Skript (gltf-transform) oder
+einfach Bescheid geben.
 
 EIGENES MODELL EINBINDEN (z. B. Mercedes E63 S)
 ----------------------------------------------
