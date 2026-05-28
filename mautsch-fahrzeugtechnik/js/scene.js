@@ -1,9 +1,21 @@
 // ============================================================
-// Mautsch Fahrzeugtechnik — 3D low-poly car scene
-// Procedurally built, driven by scroll progress + pointer
+// Mautsch Fahrzeugtechnik — 3D car scene
+// Loads a .glb model if present (models/car.glb), otherwise
+// falls back to a procedurally built low-poly car.
+// Driven by scroll progress + pointer.
 // ============================================================
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+
+// ---- Model config -------------------------------------------------
+// Drop a web-ready file at models/car.glb and it loads automatically.
+const MODEL_URL       = 'models/car.glb';
+const MODEL_TARGET_LEN = 4.6;   // car is scaled so its longest side ~ this
+const MODEL_ROTATION_Y = 0;     // radians; tweak if the model faces the wrong way
+// -------------------------------------------------------------------
 
 const PAINT   = 0x2a3340;
 const GLASS   = 0x070a12;
@@ -189,10 +201,58 @@ function init() {
   fill.position.set(0, 3, 6);
   scene.add(fill);
 
-  // car
-  const car = buildCar();
+  // car container (filled by GLB model or procedural fallback)
+  const car = new THREE.Group();
   car.rotation.y = KEYS[0].ry;
   scene.add(car);
+
+  let readyFired = false;
+  const fireReady = () => {
+    if (readyFired) return;
+    readyFired = true;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      document.dispatchEvent(new CustomEvent('scene:ready'));
+    }));
+  };
+
+  function useProceduralCar() {
+    car.add(buildCar());
+    fireReady();
+  }
+
+  function fitModel(model) {
+    model.rotation.y = MODEL_ROTATION_Y;
+    let box = new THREE.Box3().setFromObject(model);
+    const size = new THREE.Vector3(); box.getSize(size);
+    const maxDim = Math.max(size.x, size.z) || size.y || 1;
+    model.scale.setScalar(MODEL_TARGET_LEN / maxDim);
+    box = new THREE.Box3().setFromObject(model);
+    const center = new THREE.Vector3(); box.getCenter(center);
+    model.position.x -= center.x;
+    model.position.z -= center.z;
+    model.position.y -= box.min.y; // sit on the ground (y = 0)
+    model.traverse((o) => {
+      if (o.isMesh && o.material) {
+        o.castShadow = false; o.receiveShadow = false;
+        const mats = Array.isArray(o.material) ? o.material : [o.material];
+        mats.forEach((m) => { if ('envMapIntensity' in m) m.envMapIntensity = 1.25; });
+      }
+    });
+    car.add(model);
+  }
+
+  // attempt to load a real model, fall back to procedural car
+  (function loadCar() {
+    const draco = new DRACOLoader().setDecoderPath('js/vendor/three/addons/libs/draco/gltf/');
+    const loader = new GLTFLoader().setDRACOLoader(draco);
+    try { loader.setMeshoptDecoder(MeshoptDecoder); } catch (e) { /* optional */ }
+    loader.load(
+      MODEL_URL,
+      (gltf) => { fitModel(gltf.scene); fireReady(); },
+      undefined,
+      () => { useProceduralCar(); } // no model present / failed -> fallback
+    );
+  })();
 
   // ground contact shadow (radial gradient sprite texture)
   const shadowCanvas = document.createElement('canvas');
@@ -268,10 +328,8 @@ function init() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }, { passive: true });
 
-  // signal ready after first frames painted
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    document.dispatchEvent(new CustomEvent('scene:ready'));
-  }));
+  // safety net: never let the preloader hang if the model is slow
+  setTimeout(fireReady, 6000);
 }
 
 if (document.readyState === 'loading') {
