@@ -239,16 +239,30 @@
         </article>
         <article class="brand-panel reveal-up">
           <div class="brand-panel__logo">
-            <svg viewBox="0 0 100 100" width="68" height="68" role="img" aria-label="Mercedes-Benz Logo">
+            <svg viewBox="0 0 200 200" width="74" height="74" role="img" aria-label="Mercedes-Benz Logo">
               <defs>
-                <linearGradient id="mbSilver" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#f2f4f7"/>
-                  <stop offset="1" stop-color="#9197a2"/>
+                <linearGradient id="mbRing" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset="0.5" stop-color="#d7dde2"/>
+                  <stop offset="1" stop-color="#858d97"/>
+                </linearGradient>
+                <linearGradient id="mbLight" x1="0" y1="0" x2="0.7" y2="1">
+                  <stop offset="0" stop-color="#fbfcfd"/>
+                  <stop offset="1" stop-color="#aab3bd"/>
+                </linearGradient>
+                <linearGradient id="mbDark" x1="0" y1="0" x2="0.7" y2="1">
+                  <stop offset="0" stop-color="#5c6772"/>
+                  <stop offset="1" stop-color="#2a313a"/>
                 </linearGradient>
               </defs>
-              <circle cx="50" cy="50" r="47" fill="none" stroke="url(#mbSilver)" stroke-width="4"/>
-              <path d="M50 10 L42.21 45.5 L15.36 70 L50 59 L84.64 70 L57.79 45.5 Z" fill="url(#mbSilver)"/>
-              <circle cx="50" cy="50" r="3.4" fill="#9197a2"/>
+              <circle cx="100" cy="100" r="95" fill="none" stroke="url(#mbRing)" stroke-width="7"/>
+              <circle cx="100" cy="100" r="90.5" fill="none" stroke="#2a313a" stroke-width="1.2"/>
+              <path d="M100 14 L85.28 91.5 L100 100 Z" fill="url(#mbLight)"/>
+              <path d="M174.48 143 L114.72 91.5 L100 100 Z" fill="url(#mbLight)"/>
+              <path d="M25.52 143 L100 117 L100 100 Z" fill="url(#mbLight)"/>
+              <path d="M100 14 L100 100 L114.72 91.5 Z" fill="url(#mbDark)"/>
+              <path d="M174.48 143 L100 117 L100 100 Z" fill="url(#mbDark)"/>
+              <path d="M25.52 143 L85.28 91.5 L100 100 Z" fill="url(#mbDark)"/>
             </svg>
           </div>
           <h3>Mercedes-Benz</h3>
