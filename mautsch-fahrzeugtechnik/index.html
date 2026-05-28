@@ -219,14 +219,22 @@
       <div class="brands__grid">
         <article class="brand-panel reveal-up">
           <div class="brand-panel__logo">
-            <svg viewBox="0 0 100 100" width="68" height="68" role="img" aria-label="BMW Logo">
-              <circle cx="50" cy="50" r="49" fill="#0b0b0d"/>
-              <circle cx="50" cy="50" r="49" fill="none" stroke="#2c2f37" stroke-width="1"/>
-              <circle cx="50" cy="50" r="37" fill="#ffffff"/>
-              <path d="M50 50 L50 13 A37 37 0 0 1 87 50 Z" fill="#0066B1"/>
-              <path d="M50 50 L50 87 A37 37 0 0 1 13 50 Z" fill="#0066B1"/>
-              <circle cx="50" cy="50" r="37" fill="none" stroke="#0b0b0d" stroke-width="0.5"/>
-              <text x="50" y="10.6" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="0.6" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">BMW</text>
+            <svg viewBox="0 0 200 200" width="74" height="74" role="img" aria-label="BMW Logo">
+              <defs>
+                <path id="bmwArcTop" d="M 28 100 A 72 72 0 0 1 172 100" fill="none"/>
+              </defs>
+              <circle cx="100" cy="100" r="99" fill="#e8eaed"/>
+              <circle cx="100" cy="100" r="98" fill="#0a0a0c"/>
+              <circle cx="100" cy="100" r="63" fill="#ffffff"/>
+              <circle cx="100" cy="100" r="58" fill="#ffffff"/>
+              <path d="M100 100 L100 42 A58 58 0 0 0 42 100 Z" fill="#0e9bd9"/>
+              <path d="M100 100 L100 158 A58 58 0 0 0 158 100 Z" fill="#0e9bd9"/>
+              <line x1="100" y1="41" x2="100" y2="159" stroke="#ffffff" stroke-width="2.4"/>
+              <line x1="41" y1="100" x2="159" y2="100" stroke="#ffffff" stroke-width="2.4"/>
+              <circle cx="100" cy="100" r="58" fill="none" stroke="#cdd1d6" stroke-width="0.6"/>
+              <text font-size="23" font-weight="700" letter-spacing="6" font-family="Helvetica, Arial, sans-serif" fill="#b7b9bc">
+                <textPath href="#bmwArcTop" startOffset="50%" text-anchor="middle">BMW</textPath>
+              </text>
             </svg>
           </div>
           <h3>BMW</h3>
