@@ -1,0 +1,12 @@
+{
+  "name": "K-Raumgestaltung Vorschau",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "K-Raumgestaltung Website",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": "python3 -m http.server 8000 --directory k-raumgestaltung"
+}
