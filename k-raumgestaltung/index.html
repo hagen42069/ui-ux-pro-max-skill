@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K·Raumgestaltung — Räume mit Charakter | Inneneinrichtung, Sonnenschutz & Polsterarbeiten</title>
+  <meta name="description" content="K-Raumgestaltung verwandelt Räume in individuelle Wohlfühlorte. Persönliche Beratung für Fenster, Sonnenschutz, Bodenbeläge, Polsterarbeiten und Wandbespannungen in Salzhemmendorf." />
+  <meta name="theme-color" content="#1C1916" />
+  <meta property="og:title" content="K·Raumgestaltung — Räume mit Charakter" />
+  <meta property="og:description" content="Individuelle Einrichtungslösungen für Fenster, Böden, Polster und Wohnräume – persönlich, hochwertig und maßgeschneidert." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C1916'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23C2A36B' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "K-Raumgestaltung",
+    "description": "Inneneinrichtung, Raumgestaltung, Heimtextilien, Bodenbeläge, Sonnenschutz und Polsterarbeiten.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hauptstr. 18",
+      "postalCode": "31020",
+      "addressLocality": "Salzhemmendorf",
+      "addressCountry": "DE"
+    },
+    "openingHours": "Mo-Sa nach Vereinbarung",
+    "areaServed": "Salzhemmendorf und Umgebung"
+  }
+  </script>
+</head>
+<body>
+  <!-- ====================== PRELOADER ====================== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__mark">K</div>
+      <div class="preloader__line"><span></span></div>
+      <div class="preloader__label">Raumgestaltung</div>
+    </div>
+  </div>
+
+  <!-- ====================== CUSTOM CURSOR ====================== -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+    <span class="cursor__label"></span>
+  </div>
+
+  <!-- ====================== PROGRESS ====================== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ====================== NAV ====================== -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__brand" aria-label="K-Raumgestaltung Startseite">
+      <span class="nav__mark">K</span>
+      <span class="nav__brandtext">Raumgestaltung</span>
+    </a>
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <a href="#intro" data-link>Atelier</a>
+      <a href="#leistungen" data-link>Leistungen</a>
+      <a href="#materialien" data-link>Materialien</a>
+      <a href="#prozess" data-link>Beratung</a>
+      <a href="#referenzen" data-link>Referenzen</a>
+      <a href="#chillliege" data-link>Chill-Liege</a>
+    </nav>
+    <a href="#kontakt" class="nav__cta" data-magnetic>
+      <span>Beratung anfragen</span>
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav">
+      <a href="#intro">Atelier</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#materialien">Materialien</a>
+      <a href="#prozess">Beratung</a>
+      <a href="#referenzen">Referenzen</a>
+      <a href="#chillliege">Chill-Liege</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <p>Hauptstr. 18 · 31020 Salzhemmendorf</p>
+      <p>Termine nach Vereinbarung</p>
+    </div>
+  </div>
+
+  <main id="smooth-content">
+
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__grain" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">Interior · Sonnenschutz · Polsterei</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Räume, die Stil,</span></span>
+          <span class="line"><span>Funktion und</span></span>
+          <span class="line"><span><em>Persönlichkeit</em> verbinden.</span></span>
+        </h1>
+        <p class="hero__sub">
+          K-Raumgestaltung entwickelt individuelle Einrichtungslösungen für Fenster,
+          Böden, Polster und Wohnräume — persönlich, hochwertig und maßgeschneidert.
+        </p>
+        <div class="hero__actions">
+          <a href="#kontakt" class="btn btn--solid" data-magnetic><span>Beratung anfragen</span></a>
+          <a href="#leistungen" class="btn btn--ghost" data-magnetic><span>Leistungen entdecken</span></a>
+        </div>
+      </div>
+
+      <div class="hero__meta">
+        <span>Salzhemmendorf</span>
+        <span class="dot"></span>
+        <span>Seit über 20 Jahren</span>
+      </div>
+
+      <a href="#intro" class="hero__scroll" aria-label="Nach unten scrollen">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-text">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ====================== INTRO ====================== -->
+    <section class="intro" id="intro">
+      <div class="intro__bg" aria-hidden="true">
+        <span class="material-orb material-orb--1"></span>
+        <span class="material-orb material-orb--2"></span>
+        <span class="material-orb material-orb--3"></span>
+      </div>
+      <div class="container intro__grid">
+        <div class="intro__left">
+          <p class="eyebrow" data-reveal>Wer wir sind</p>
+        </div>
+        <div class="intro__right">
+          <p class="intro__lead reveal-text">
+            In der Raumgestaltung zählt jedes Detail: Licht, Material, Stoff, Struktur,
+            Farbe und Gefühl. K-Raumgestaltung verbindet handwerkliche Erfahrung mit
+            ästhetischem Gespür — und schafft Räume, die zu Menschen passen.
+          </p>
+          <div class="intro__stats">
+            <div class="stat" data-reveal>
+              <span class="stat__num" data-count="20">20</span><span class="stat__plus">+</span>
+              <span class="stat__label">Jahre Erfahrung</span>
+            </div>
+            <div class="stat" data-reveal>
+              <span class="stat__num" data-count="6">6</span>
+              <span class="stat__label">Gewerke unter einem Dach</span>
+            </div>
+            <div class="stat" data-reveal>
+              <span class="stat__num" data-count="100">100</span><span class="stat__plus">%</span>
+              <span class="stat__label">Maßanfertigung</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="intro__quote reveal-text">
+        Fenster gestalten Licht. Stoffe gestalten Atmosphäre. Böden geben Räumen Charakter.
+      </p>
+    </section>
+
+    <!-- ====================== LEISTUNGEN — SCROLL STORY ====================== -->
+    <section class="services" id="leistungen">
+
+      <!-- 1 · Fenster & Sonnenschutz -->
+      <div class="svc" id="svc-fenster">
+        <div class="svc__sticky">
+          <div class="svc__visual" aria-hidden="true">
+            <div class="window-stage" id="windowStage">
+              <div class="window-sun" id="windowSun"></div>
+              <svg class="window-svg" viewBox="0 0 520 600" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#cdb98f" stop-opacity="0.55"/>
+                    <stop offset="1" stop-color="#7d8a86" stop-opacity="0.35"/>
+                  </linearGradient>
+                  <linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#efe6d6"/>
+                    <stop offset="1" stop-color="#cdbfa6"/>
+                  </linearGradient>
+                </defs>
+                <!-- glass / view -->
+                <rect x="60" y="60" width="400" height="480" fill="url(#glass)"/>
+                <!-- frame -->
+                <rect x="48" y="48" width="424" height="504" fill="none" stroke="#2a2520" stroke-width="14"/>
+                <line x1="260" y1="60" x2="260" y2="540" stroke="#2a2520" stroke-width="8"/>
+                <line x1="60" y1="300" x2="460" y2="300" stroke="#2a2520" stroke-width="8"/>
+
+                <!-- treatment layers (toggled via scroll) -->
+                <g class="treat" data-treat="plissee">
+                  <g fill="url(#fabric)" opacity="0.96">
+                    <rect x="60" y="60" width="400" height="240"/>
+                  </g>
+                  <g stroke="#bfb094" stroke-width="2" opacity="0.7">
+                    <line x1="60" y1="80" x2="460" y2="80"/><line x1="60" y1="110" x2="460" y2="110"/>
+                    <line x1="60" y1="140" x2="460" y2="140"/><line x1="60" y1="170" x2="460" y2="170"/>
+                    <line x1="60" y1="200" x2="460" y2="200"/><line x1="60" y1="230" x2="460" y2="230"/>
+                    <line x1="60" y1="260" x2="460" y2="260"/>
+                  </g>
+                </g>
+                <g class="treat" data-treat="rollo">
+                  <rect x="60" y="60" width="400" height="180" fill="url(#fabric)"/>
+                  <rect x="56" y="236" width="408" height="14" rx="7" fill="#b08d57"/>
+                </g>
+                <g class="treat" data-treat="jalousie">
+                  <g fill="#d8cbb2">
+                    <rect x="62" y="70" width="396" height="14"/><rect x="62" y="98" width="396" height="14"/>
+                    <rect x="62" y="126" width="396" height="14"/><rect x="62" y="154" width="396" height="14"/>
+                    <rect x="62" y="182" width="396" height="14"/><rect x="62" y="210" width="396" height="14"/>
+                    <rect x="62" y="238" width="396" height="14"/><rect x="62" y="266" width="396" height="14"/>
+                    <rect x="62" y="294" width="396" height="14"/><rect x="62" y="322" width="396" height="14"/>
+                    <rect x="62" y="350" width="396" height="14"/><rect x="62" y="378" width="396" height="14"/>
+                  </g>
+                </g>
+                <g class="treat" data-treat="flaeche">
+                  <rect x="60" y="60" width="120" height="480" fill="url(#fabric)"/>
+                  <rect x="200" y="60" width="120" height="480" fill="#e3d8c4"/>
+                  <rect x="340" y="60" width="120" height="480" fill="url(#fabric)"/>
+                </g>
+                <g class="treat" data-treat="gardine">
+                  <path d="M60 60 q14 240 0 480 q22 -18 44 0 q-14 -240 0 -480 z" fill="#f1ebe0"/>
+                  <path d="M150 60 q14 240 0 480 q22 -18 44 0 q-14 -240 0 -480 z" fill="#ece4d6"/>
+                  <path d="M328 60 q14 240 0 480 q22 -18 44 0 q-14 -240 0 -480 z" fill="#ece4d6"/>
+                  <path d="M416 60 q14 240 0 480 q22 -18 44 0 q-14 -240 0 -480 z" fill="#f1ebe0"/>
+                </g>
+                <!-- brass rod -->
+                <rect x="34" y="40" width="452" height="9" rx="4.5" fill="#c2a36b"/>
+                <circle cx="38" cy="44" r="10" fill="#b08d57"/>
+                <circle cx="482" cy="44" r="10" fill="#b08d57"/>
+              </svg>
+            </div>
+          </div>
+          <div class="svc__panel">
+            <p class="eyebrow">01 — Fenster & Sonnenschutz</p>
+            <h2 class="svc__title">Licht, das sich<br/>nach Ihnen richtet.</h2>
+            <p class="svc__lead">
+              Vom blendfreien Arbeitslicht bis zur warmen Abendstimmung: Wir gestalten,
+              wie das Licht in Ihren Räumen wirkt — präzise, funktional und schön.
+            </p>
+            <ul class="svc__list" id="svcFensterList">
+              <li data-treat="plissee">Plisseeanlagen</li>
+              <li data-treat="rollo">Rollos</li>
+              <li data-treat="jalousie">Jalousien &amp; Vertikallamellen</li>
+              <li data-treat="flaeche">Flächenvorhänge</li>
+              <li data-treat="gardine">Gardinen &amp; Vorhänge</li>
+              <li data-treat="gardine">Stilstangen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 · Böden & Materialien -->
+      <div class="svc svc--alt" id="svc-boeden">
+        <div class="svc__sticky">
+          <div class="svc__visual" aria-hidden="true">
+            <div class="floor-stage" id="floorStage">
+              <div class="floor-room">
+                <div class="floor-surface" id="floorSurface" data-floor="teppich"></div>
+                <div class="floor-wall"></div>
+                <div class="floor-light"></div>
+              </div>
+              <div class="floor-caption" id="floorCaption">Teppich · weich &amp; behaglich</div>
+            </div>
+          </div>
+          <div class="svc__panel">
+            <p class="eyebrow">02 — Böden & Materialien</p>
+            <h2 class="svc__title">Der Boden trägt<br/>die Stimmung.</h2>
+            <p class="svc__lead">
+              Jeder Belag erzählt eine andere Geschichte — gemütlich, modern, robust,
+              natürlich oder pflegeleicht. Wir finden den, der zu Ihrem Alltag passt.
+            </p>
+            <ul class="svc__list" id="svcFloorList">
+              <li data-floor="teppich" data-mood="weich &amp; behaglich">Teppich</li>
+              <li data-floor="laminat" data-mood="modern &amp; klar">Laminat</li>
+              <li data-floor="linoleum" data-mood="natürlich &amp; robust">Linoleum</li>
+              <li data-floor="kork" data-mood="warm &amp; nachhaltig">Kork</li>
+              <li data-floor="pvc" data-mood="pflegeleicht &amp; vielseitig">PVC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 · Polstern & Sonderanfertigungen -->
+      <div class="svc" id="svc-polster">
+        <div class="svc__sticky">
+          <div class="svc__visual" aria-hidden="true">
+            <div class="uph-stage" id="uphStage">
+              <svg class="uph-svg" viewBox="0 0 560 420" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="uphShade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+                    <stop offset="1" stop-color="#000000" stop-opacity="0.22"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="280" cy="372" rx="210" ry="26" fill="#000" opacity="0.18"/>
+                <!-- sofa body -->
+                <g class="uph-body">
+                  <rect x="90" y="170" width="380" height="120" rx="26" class="uph-fill"/>
+                  <rect x="78" y="150" width="70" height="150" rx="24" class="uph-fill"/>
+                  <rect x="412" y="150" width="70" height="150" rx="24" class="uph-fill"/>
+                  <rect x="120" y="120" width="320" height="80" rx="22" class="uph-fill"/>
+                  <rect x="150" y="200" width="120" height="70" rx="16" class="uph-cushion"/>
+                  <rect x="290" y="200" width="120" height="70" rx="16" class="uph-cushion"/>
+                  <rect x="90" y="170" width="380" height="120" rx="26" fill="url(#uphShade)"/>
+                </g>
+                <!-- legs -->
+                <rect x="110" y="296" width="16" height="40" rx="6" fill="#5a4634"/>
+                <rect x="434" y="296" width="16" height="40" rx="6" fill="#5a4634"/>
+              </svg>
+              <div class="uph-caption" id="uphCaption">Alter Bezug</div>
+            </div>
+          </div>
+          <div class="svc__panel">
+            <p class="eyebrow">03 — Polstern & Sonderanfertigungen</p>
+            <h2 class="svc__title">Lieblingsstücke,<br/>neu erzählt.</h2>
+            <p class="svc__lead">
+              Gut gebaute Möbel verdienen ein zweites Leben. Wir beziehen neu, fertigen
+              maß­geschneidert und gestalten Wände mit Stoff — vom Sessel bis zur Bank.
+            </p>
+            <ul class="svc__list" id="svcUphList">
+              <li data-uph="alt">Polstergarnituren</li>
+              <li data-uph="neu">Sofas</li>
+              <li data-uph="leder">Sessel</li>
+              <li data-uph="struktur">Bänke &amp; Stühle</li>
+              <li data-uph="sonder">Sonderanfertigungen</li>
+              <li data-uph="wand">Wandbespannungen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== MATERIAL KONFIGURATOR ====================== -->
+    <section class="materials" id="materialien">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>Material-Atelier</p>
+          <h2 class="section-title reveal-text">Materialien zum Anfassen — digital erlebbar.</h2>
+          <p class="section-intro reveal-text">
+            Bewegen Sie die Maus über ein Muster. Licht, Struktur und Charakter
+            jedes Materials werden spürbar, bevor Sie es in Händen halten.
+          </p>
+        </header>
+
+        <div class="material-grid" id="materialGrid">
+          <article class="material-card" data-mat="leinen" tabindex="0">
+            <div class="material-card__sample mat-leinen"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>Leinenstoff</h3>
+              <p>Natürlich, atmungsaktiv, leicht changierend im Licht.</p>
+              <span class="material-card__use">Gardinen · Flächenvorhänge</span>
+            </div>
+          </article>
+          <article class="material-card" data-mat="leder" tabindex="0">
+            <div class="material-card__sample mat-leder"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>Leder</h3>
+              <p>Charaktervoll und langlebig — wird mit den Jahren schöner.</p>
+              <span class="material-card__use">Polster · Sessel</span>
+            </div>
+          </article>
+          <article class="material-card" data-mat="kork" tabindex="0">
+            <div class="material-card__sample mat-kork"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>Kork</h3>
+              <p>Warm unter den Füßen, leise und nachhaltig.</p>
+              <span class="material-card__use">Bodenbelag</span>
+            </div>
+          </article>
+          <article class="material-card" data-mat="teppich" tabindex="0">
+            <div class="material-card__sample mat-teppich"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>Teppich</h3>
+              <p>Behaglichkeit, die man hört — und fühlt.</p>
+              <span class="material-card__use">Wohnräume · Schlafräume</span>
+            </div>
+          </article>
+          <article class="material-card" data-mat="laminat" tabindex="0">
+            <div class="material-card__sample mat-laminat"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>Laminat</h3>
+              <p>Klare Holzoptik, robust und pflegeleicht.</p>
+              <span class="material-card__use">Wohn- &amp; Arbeitsräume</span>
+            </div>
+          </article>
+          <article class="material-card" data-mat="linoleum" tabindex="0">
+            <div class="material-card__sample mat-linoleum"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>Linoleum</h3>
+              <p>Aus natürlichen Rohstoffen, strapazierfähig und ruhig.</p>
+              <span class="material-card__use">Stark genutzte Flächen</span>
+            </div>
+          </article>
+          <article class="material-card" data-mat="pvc" tabindex="0">
+            <div class="material-card__sample mat-pvc"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>PVC / Vinyl</h3>
+              <p>Wasserfest und vielseitig — auch für Küche und Bad.</p>
+              <span class="material-card__use">Feuchträume · Gewerbe</span>
+            </div>
+          </article>
+          <article class="material-card" data-mat="struktur" tabindex="0">
+            <div class="material-card__sample mat-struktur"><span class="material-card__sheen"></span></div>
+            <div class="material-card__body">
+              <h3>Strukturstoff</h3>
+              <p>Haptische Tiefe für Polster und Wandbespannungen.</p>
+              <span class="material-card__use">Polster · Wände</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PROZESS — HORIZONTAL SCROLL ====================== -->
+    <section class="process" id="prozess">
+      <div class="process__pin" id="processPin">
+        <div class="process__head">
+          <p class="eyebrow">Beratungsprozess</p>
+          <h2 class="process__title">Von der Idee<br/>zum fertigen Raum.</h2>
+          <p class="process__note">
+            Persönliche Beratung — auf Wunsch bei Ihnen zu Hause, mit Materialauswahl
+            in Ihren eigenen Räumen.
+          </p>
+        </div>
+        <div class="process__track" id="processTrack">
+          <article class="step">
+            <span class="step__num">01</span>
+            <h3>Erstgespräch</h3>
+            <p>Wir hören zu: Wünsche, Räume, Budget und Zeithorizont.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">02</span>
+            <h3>Beratung vor Ort</h3>
+            <p>Wir kommen zu Ihnen — Licht, Maße und Atmosphäre direkt im Raum erlebt.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">03</span>
+            <h3>Materialauswahl</h3>
+            <p>Stoffe, Böden und Farben in Ihren eigenen vier Wänden vergleichen.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">04</span>
+            <h3>Maßanfertigung</h3>
+            <p>Alles entsteht passgenau für Ihre Fenster, Möbel und Flächen.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">05</span>
+            <h3>Montage</h3>
+            <p>Saubere, fachgerechte Umsetzung — termintreu und sorgfältig.</p>
+          </article>
+          <article class="step step--final">
+            <span class="step__num">06</span>
+            <h3>Wohlfühlraum</h3>
+            <p>Sie ziehen ein in einen Raum, der ganz Ihrer ist.</p>
+            <a href="#kontakt" class="step__cta" data-magnetic><span>Jetzt starten</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== REFERENZEN ====================== -->
+    <section class="refs" id="referenzen">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>Referenzen</p>
+          <h2 class="section-title reveal-text">Räume, die wir verwandelt haben.</h2>
+          <div class="refs__filter" id="refsFilter">
+            <button class="is-active" data-filter="all">Alle</button>
+            <button data-filter="fenster">Fenster</button>
+            <button data-filter="boeden">Böden</button>
+            <button data-filter="polster">Polster</button>
+            <button data-filter="raeume">Räume</button>
+          </div>
+        </header>
+
+        <!-- Before / After -->
+        <div class="ba" id="beforeAfter" data-reveal>
+          <div class="ba__img ba__after">
+            <div class="scene scene--after"></div>
+            <span class="ba__tag">Nachher</span>
+          </div>
+          <div class="ba__img ba__before" id="baBefore">
+            <div class="scene scene--before"></div>
+            <span class="ba__tag">Vorher</span>
+          </div>
+          <div class="ba__handle" id="baHandle" role="slider" aria-label="Vorher-Nachher Vergleich" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+            <span class="ba__grip"></span>
+          </div>
+          <div class="ba__caption">Wohnzimmer · neue Gardinen, Boden &amp; Polster</div>
+        </div>
+
+        <!-- Masonry gallery -->
+        <div class="gallery" id="gallery">
+          <figure class="gal gal--tall" data-cat="fenster">
+            <div class="gal__img scene scene--curtain"></div>
+            <figcaption><span>Bodenlange Leinenvorhänge</span><em>Fenster · Leinen</em></figcaption>
+          </figure>
+          <figure class="gal" data-cat="boeden">
+            <div class="gal__img scene scene--wood"></div>
+            <figcaption><span>Warmer Holzdielen-Look</span><em>Böden · Laminat</em></figcaption>
+          </figure>
+          <figure class="gal" data-cat="polster">
+            <div class="gal__img scene scene--sofa"></div>
+            <figcaption><span>Sessel neu bezogen</span><em>Polster · Strukturstoff</em></figcaption>
+          </figure>
+          <figure class="gal gal--wide" data-cat="raeume">
+            <div class="gal__img scene scene--living"></div>
+            <figcaption><span>Wohnraum komplett gestaltet</span><em>Räume · Konzept</em></figcaption>
+          </figure>
+          <figure class="gal" data-cat="fenster">
+            <div class="gal__img scene scene--plissee"></div>
+            <figcaption><span>Plissee im Dachfenster</span><em>Fenster · Plissee</em></figcaption>
+          </figure>
+          <figure class="gal gal--tall" data-cat="polster">
+            <div class="gal__img scene scene--leather"></div>
+            <figcaption><span>Ledersessel-Restaurierung</span><em>Polster · Leder</em></figcaption>
+          </figure>
+          <figure class="gal" data-cat="boeden">
+            <div class="gal__img scene scene--cork"></div>
+            <figcaption><span>Korkboden Schlafzimmer</span><em>Böden · Kork</em></figcaption>
+          </figure>
+          <figure class="gal" data-cat="raeume">
+            <div class="gal__img scene scene--wall"></div>
+            <figcaption><span>Wandbespannung Esszimmer</span><em>Räume · Wandbespannung</em></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CHILL-LIEGE ====================== -->
+    <section class="chill" id="chillliege">
+      <div class="chill__blueprint" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#c2a36b" stroke-width="1" fill="none" opacity="0.5">
+            <circle cx="600" cy="400" r="280"/>
+            <circle cx="600" cy="400" r="200"/>
+            <line x1="120" y1="400" x2="1080" y2="400"/>
+            <line x1="600" y1="80" x2="600" y2="720"/>
+            <path d="M380 520 q220 -120 440 0"/>
+          </g>
+        </svg>
+      </div>
+      <div class="container chill__grid">
+        <div class="chill__text">
+          <p class="eyebrow" data-reveal>Eine Idee mit Charakter</p>
+          <h2 class="chill__title reveal-text">Die Chill-Liege.</h2>
+          <p class="chill__lead" data-reveal>
+            Aus einer einfachen Frage entstand eine außergewöhnliche Erfindung:
+            Warum eine ungenutzte Schubkarre nicht in eine komfortable Liege verwandeln?
+            So entwickelte <strong>Mario Krause</strong> 2015 den ersten Prototyp —
+            später patentiert und 2016 auf der Hannover Messe vorgestellt.
+          </p>
+          <a href="#kontakt" class="btn btn--gold" data-magnetic><span>Mehr über die Chill-Liege</span></a>
+        </div>
+        <div class="chill__stage" aria-hidden="true">
+          <svg class="chill-svg" id="chillSvg" viewBox="0 0 560 420">
+            <g class="chill-grid" stroke="#6b5d49" stroke-width="0.6" opacity="0.4">
+              <line x1="0" y1="350" x2="560" y2="350"/>
+              <line x1="0" y1="380" x2="560" y2="380"/>
+            </g>
+            <!-- wheelbarrow (start) -->
+            <g class="chill-barrow" stroke="#c2a36b" stroke-width="2" fill="none">
+              <path d="M150 230 L410 230 L380 300 L190 300 Z"/>
+              <line x1="410" y1="230" x2="470" y2="210"/>
+              <line x1="380" y1="300" x2="450" y2="300"/>
+              <circle cx="220" cy="330" r="34"/>
+              <circle cx="220" cy="330" r="6" fill="#c2a36b"/>
+              <line x1="385" y1="300" x2="385" y2="340"/>
+            </g>
+            <!-- lounger (end) -->
+            <g class="chill-lounge" stroke="#e9dcc2" stroke-width="2.4" fill="none">
+              <path d="M120 300 q40 -10 90 -12 l210 0 q40 0 40 -40 l0 -30"/>
+              <path d="M120 300 l0 28 M460 300 l0 28"/>
+              <path d="M210 288 q120 -150 250 -70" stroke-dasharray="0"/>
+              <line x1="160" y1="300" x2="180" y2="328"/>
+              <line x1="420" y1="300" x2="440" y2="328"/>
+            </g>
+          </svg>
+          <span class="chill__patent">PAT. · Hannover Messe 2016</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== KONTAKT ====================== -->
+    <section class="contact" id="kontakt">
+      <div class="contact__visual" aria-hidden="true">
+        <div class="scene scene--living contact__scene"></div>
+        <div class="contact__overlay"></div>
+        <div class="contact__visualtext">
+          <p class="eyebrow">Persönlich · Vor Ort</p>
+          <h3>Jeder Raum erzählt etwas über die Menschen, die in ihm leben.</h3>
+          <p>Wir helfen dabei, diese Geschichte sichtbar zu machen.</p>
+        </div>
+      </div>
+      <div class="contact__form-wrap">
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="contact__title">Jetzt persönliche<br/>Beratung vereinbaren.</h2>
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="field">
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder=" " />
+            <label for="name">Ihr Name</label>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder=" " />
+              <label for="email">E-Mail</label>
+            </div>
+            <div class="field">
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder=" " />
+              <label for="phone">Telefon (optional)</label>
+            </div>
+          </div>
+          <div class="field">
+            <select id="topic" name="topic">
+              <option value="fenster">Fenster &amp; Sonnenschutz</option>
+              <option value="boeden">Böden &amp; Materialien</option>
+              <option value="polster">Polstern &amp; Sonderanfertigungen</option>
+              <option value="raum">Komplette Raumgestaltung</option>
+              <option value="chill">Chill-Liege</option>
+            </select>
+            <label for="topic" class="label--static">Ihr Anliegen</label>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+            <label for="message">Erzählen Sie uns von Ihrem Raum</label>
+          </div>
+          <label class="checkbox">
+            <input type="checkbox" id="privacy" required />
+            <span>Ich habe die <a href="#" data-noop>Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Daten zur Kontaktaufnahme zu.</span>
+          </label>
+          <button type="submit" class="btn btn--solid btn--full" data-magnetic><span>Beratung anfragen</span></button>
+          <p class="contact__success" id="formSuccess" role="status" aria-live="polite" hidden>
+            Vielen Dank — wir melden uns persönlich bei Ihnen.
+          </p>
+        </form>
+
+        <div class="contact__info">
+          <div>
+            <span class="contact__info-label">Atelier</span>
+            <p>Hauptstr. 18<br/>31020 Salzhemmendorf</p>
+          </div>
+          <div>
+            <span class="contact__info-label">Termine</span>
+            <p>Nach Vereinbarung<br/>Beratung auch vor Ort</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <span class="nav__mark">K</span>
+          <span>Raumgestaltung</span>
+          <p>Räume mit Charakter — Inneneinrichtung, Sonnenschutz, Bodenbeläge und Polsterarbeiten aus Salzhemmendorf.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#materialien">Materialien</a>
+          <a href="#prozess">Beratung</a>
+          <a href="#referenzen">Referenzen</a>
+          <a href="#chillliege">Chill-Liege</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <div class="footer__contact">
+          <p>Hauptstr. 18 · 31020 Salzhemmendorf</p>
+          <p>Termine nach Vereinbarung</p>
+        </div>
+      </div>
+      <div class="container footer__bottom">
+        <span>© <span id="year"></span> K-Raumgestaltung</span>
+        <span>Räume, die zu Menschen passen.</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ====================== SCRIPTS ====================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="js/scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
