@@ -1,33 +1,34 @@
-EIGENES 3D-AUTO EINBINDEN
-=========================
+3D-AUTO DER WEBSITE
+===================
 
-Die Website lädt automatisch eine Datei namens  car.glb  aus diesem Ordner
-(models/car.glb) und zeigt sie statt des prozeduralen Fallback-Autos an.
-Sie wird automatisch zentriert, auf den Boden gestellt und passend skaliert.
+Die Seite lädt automatisch  models/car.glb  und zeigt es als Hero-Auto an
+(automatisch zentriert, auf den Boden gestellt, passend skaliert).
+Ist keine Datei vorhanden, wird das prozedurale Low-Poly-Auto angezeigt.
 
-SO GEHT'S
----------
-1) Modell besorgen (z. B. den Mercedes-Benz E63 S von CGTrader).
-   Hinweis: Lizenzbedingungen des Modells beachten (Royalty Free etc.).
+AKTUELLES MODELL (PLATZHALTER)
+-----------------------------
+car.glb ist aktuell ein Mercedes (G-Klasse / G63-Optik), web-optimiert:
+  - Original ~22 MB  ->  ~2,8 MB
+  - Geometrie DRACO-komprimiert, Texturen auf 1024px WebP reduziert
+  - ~229.000 Dreiecke
 
-2) In web-fertiges glTF/GLB umwandeln, falls es .obj/.fbx/.blend/.max ist:
-   - Blender (kostenlos) öffnen  ->  File > Import  (dein Format)
-   - dann  File > Export > glTF 2.0 (.glb)  ->  als car.glb speichern
-   - Format "glTF Binary (.glb)" wählen, "Include > Materials" anhaken.
+WICHTIG – LIZENZ:
+Das Modell stammt aus einem öffentlichen GitHub-Repo (Jazua6969/3d-showcase),
+das KEINE Lizenzdatei enthält. Es dient hier nur als PLATZHALTER, damit du
+ein echtes Mercedes-Modell siehst. Vor dem LIVE-Gang einer echten Kundenseite
+unbedingt durch ein Modell mit geklärter Lizenz ersetzen (z. B. dein
+gekauftes/lizensiertes CGTrader-Modell des E63 S).
 
-3) Optimieren (wichtig fürs Web – CGTrader-Modelle sind oft sehr schwer):
-   Ziel: < ~5 MB, < ~150.000 Dreiecke. Mit Node:
+EIGENES MODELL EINBINDEN (z. B. Mercedes E63 S)
+----------------------------------------------
+1) Modell besorgen (CGTrader, Sketchfab "Downloadable + glTF", o. ä.).
+2) Falls .obj/.fbx/.blend/.max: in Blender öffnen und als glTF 2.0 (.glb)
+   exportieren ("glTF Binary", Materialien einschließen).
+3) Optimieren (Ziel < ~5 MB):
      npx @gltf-transform/cli optimize roh.glb car.glb --texture-compress webp
-   (DRACO- und Meshopt-komprimierte Dateien werden ebenfalls unterstützt.)
+4) Datei hier als  models/car.glb  ablegen, Seite neu laden – fertig.
 
-4) Die fertige Datei hierher legen:  models/car.glb
-   Danach Seite neu laden – fertig.
-
-FEINTUNING (optional)
----------------------
-In  js/scene.js  ganz oben:
-   MODEL_TARGET_LEN  = Gesamtgröße des Autos in der Szene (Standard 4.6)
+FEINTUNING (optional, in js/scene.js ganz oben)
+-----------------------------------------------
+   MODEL_TARGET_LEN  = Größe des Autos in der Szene (Standard 4.6)
    MODEL_ROTATION_Y  = Drehung in Radiant, falls das Auto falsch herum steht
-                       (z. B. Math.PI für 180°)
-
-Ohne car.glb wird automatisch das prozedurale Low-Poly-Auto angezeigt.
