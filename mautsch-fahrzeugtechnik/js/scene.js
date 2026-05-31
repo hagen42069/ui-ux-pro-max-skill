@@ -206,6 +206,8 @@ function init() {
   car.rotation.y = KEYS[0].ry;
   scene.add(car);
 
+  const paintMaterials = [];
+
   let readyFired = false;
   const fireReady = () => {
     if (readyFired) return;
@@ -235,7 +237,11 @@ function init() {
       if (o.isMesh && o.material) {
         o.castShadow = false; o.receiveShadow = false;
         const mats = Array.isArray(o.material) ? o.material : [o.material];
-        mats.forEach((m) => { if ('envMapIntensity' in m) m.envMapIntensity = 1.25; });
+        mats.forEach((m) => {
+          if (!m) return;
+          if ('envMapIntensity' in m) m.envMapIntensity = 1.25;
+          if (m.name === 'paint') paintMaterials.push(m);
+        });
       }
     });
     car.add(model);
@@ -277,6 +283,10 @@ function init() {
   window.MautschScene = {
     setProgress(p) { state.progress = Math.max(0, Math.min(1, p)); },
     setPointer(x, y) { state.pointerX = x; state.pointerY = y; },
+    setPaintColor(hex) {
+      paintMaterials.forEach((m) => { if (m.color && m.color.setStyle) m.color.setStyle(hex); });
+    },
+    hasModel() { return paintMaterials.length > 0; },
   };
 
   const lookAt = new THREE.Vector3(0, 0.55, 0);

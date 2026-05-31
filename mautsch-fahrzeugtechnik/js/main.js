@@ -230,6 +230,53 @@ if (!isTouch && !reduced) {
 }
 
 // ------------------------------------------------------------
+// Contact form -> mailto:
+// ------------------------------------------------------------
+const CONTACT_EMAIL = 'info@mautsch-fahrzeugtechnik.de'; // TODO: durch echte Adresse ersetzen
+const contactForm = document.getElementById('contactForm');
+const cfStatus = document.getElementById('cfStatus');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      cfStatus.textContent = 'Bitte alle Pflichtfelder ausfüllen.';
+      cfStatus.className = 'contact__form-status is-error';
+      return;
+    }
+    const d = Object.fromEntries(new FormData(contactForm));
+    const subject = `Anfrage: ${d.service || ''} – ${d.vehicle || ''}`.trim();
+    const body =
+      `Name: ${d.name}\n` +
+      `E-Mail: ${d.email}\n` +
+      `Telefon: ${d.phone || '—'}\n` +
+      `Fahrzeug: ${d.vehicle}\n` +
+      `Leistung: ${d.service}\n\n` +
+      `Nachricht:\n${d.message}\n`;
+    const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+    cfStatus.textContent = 'Ihr E-Mail-Programm öffnet sich…';
+    cfStatus.className = 'contact__form-status is-ok';
+  });
+}
+
+// ------------------------------------------------------------
+// 3D paint color picker
+// ------------------------------------------------------------
+const colorPicker = document.getElementById('colorPicker');
+if (colorPicker) {
+  colorPicker.addEventListener('click', (e) => {
+    const btn = e.target.closest('.swatch');
+    if (!btn) return;
+    const color = btn.dataset.color;
+    if (window.MautschScene && window.MautschScene.setPaintColor) {
+      window.MautschScene.setPaintColor(color);
+    }
+    colorPicker.querySelectorAll('.swatch').forEach((s) => s.classList.toggle('is-active', s === btn));
+  });
+}
+
+// ------------------------------------------------------------
 // Card glow + subtle tilt
 // ------------------------------------------------------------
 if (!isTouch && !reduced) {

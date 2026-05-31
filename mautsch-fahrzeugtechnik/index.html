@@ -11,6 +11,33 @@
   <meta property="og:description" content="Meisterbetrieb für BMW & Mercedes in Hildesheim. Service nach Herstellervorgaben, Tuning, Fahrwerk & mehr." />
   <meta property="og:type" content="website" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Mautsch Fahrzeugtechnik & Tuning",
+    "description": "Meisterbetrieb für BMW & Mercedes in Hildesheim. Inspektion, Reparatur, Tuning, Fahrwerk und Reifenservice.",
+    "url": "https://www.mautsch-fahrzeugtechnik.de",
+    "telephone": "+49-5121-1772078",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Daimlerring 39",
+      "postalCode": "31135",
+      "addressLocality": "Hildesheim",
+      "addressCountry": "DE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 52.155, "longitude": 9.95 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "15:00" }
+    ],
+    "areaServed": { "@type": "City", "name": "Hildesheim" },
+    "knowsAbout": ["BMW","Mercedes-Benz","Inspektion","Reparatur","Tuning","Fahrwerk","Reifenservice","Diagnose"],
+    "sameAs": ["https://www.facebook.com/Meistermautsch/"]
+  }
+  </script>
+
   <link rel="preload" href="fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/fonts.css" />
@@ -64,6 +91,7 @@
       <a href="#marken" data-link>Marken</a>
       <a href="#ablauf" data-link>Ablauf</a>
       <a href="#werkstatt" data-link>Werkstatt</a>
+      <a href="#faq" data-link>FAQ</a>
       <a href="#kontakt" data-link>Kontakt</a>
     </nav>
     <a href="tel:+4951211772078" class="btn btn--sm nav__cta" data-magnetic>
@@ -81,6 +109,7 @@
     <a href="#marken" data-link>Marken</a>
     <a href="#ablauf" data-link>Ablauf</a>
     <a href="#werkstatt" data-link>Werkstatt</a>
+    <a href="#faq" data-link>FAQ</a>
     <a href="#kontakt" data-link>Kontakt</a>
     <a href="tel:+4951211772078" class="btn">Termin anfragen</a>
   </div>
@@ -110,6 +139,18 @@
       <div class="hero__scroll" aria-hidden="true">
         <span>Scrollen</span>
         <div class="hero__scroll-line"><i></i></div>
+      </div>
+
+      <div class="color-picker reveal-up" id="colorPicker" aria-label="Lackfarbe des 3D-Autos wählen">
+        <span class="color-picker__label">Lackfarbe</span>
+        <div class="color-picker__swatches" role="radiogroup" aria-label="Lackfarbe">
+          <button type="button" class="swatch is-active" data-color="#3a414e" style="--c:#3a414e" aria-label="Gunmetal" title="Gunmetal"></button>
+          <button type="button" class="swatch" data-color="#0c0d10" style="--c:#0c0d10" aria-label="Tiefschwarz" title="Tiefschwarz"></button>
+          <button type="button" class="swatch" data-color="#c1c5cc" style="--c:#c1c5cc" aria-label="Silber" title="Silber"></button>
+          <button type="button" class="swatch" data-color="#c8202a" style="--c:#c8202a" aria-label="Performance-Rot" title="Performance-Rot"></button>
+          <button type="button" class="swatch" data-color="#1d3a5e" style="--c:#1d3a5e" aria-label="Marineblau" title="Marineblau"></button>
+          <button type="button" class="swatch" data-color="#1b3d2a" style="--c:#1b3d2a" aria-label="British Racing Green" title="British Racing Green"></button>
+        </div>
       </div>
     </section>
 
@@ -306,6 +347,40 @@
       </div>
     </section>
 
+    <!-- ===== FAQ ===== -->
+    <section class="section faq" id="faq">
+      <div class="section__head">
+        <div class="section__eyebrow reveal-up"><span class="dot"></span> Häufige Fragen</div>
+        <h2 class="section__title reveal-up">Klare Antworten auf<br><span class="accent">die häufigsten Fragen.</span></h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq-item reveal-up">
+          <summary><span>Bleibt meine Herstellergarantie bei euch erhalten?</span><i></i></summary>
+          <div class="faq-item__body"><p>Ja. Wir warten Ihr Fahrzeug strikt nach Herstellervorgaben und tragen den Service online beim Hersteller ein – die Neuwagengarantie bleibt vollständig erhalten.</p></div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary><span>Ist Tuning mit TÜV-Eintragung möglich?</span><i></i></summary>
+          <div class="faq-item__body"><p>Wir verbauen ausschließlich Komponenten mit Teilegutachten, ABE oder EG-Betriebserlaubnis. Eintragungen koordinieren wir mit den Prüforganisationen, damit Ihr Umbau am Ende sauber im Fahrzeugschein steht.</p></div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary><span>Brauche ich einen Termin?</span><i></i></summary>
+          <div class="faq-item__body"><p>Für planbare Arbeiten ja – ein Anruf oder eine WhatsApp-Nachricht genügt. Bei Pannen oder akuten Defekten finden wir kurzfristig einen Slot.</p></div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary><span>Welche Fahrzeuge betreut ihr?</span><i></i></summary>
+          <div class="faq-item__body"><p>Unser Schwerpunkt liegt auf BMW und Mercedes-Benz – vom Daily über Sportwagen bis SUV. Andere Marken gerne auf Anfrage.</p></div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary><span>Welche Zahlungsarten akzeptiert ihr?</span><i></i></summary>
+          <div class="faq-item__body"><p>EC-Karte, Bargeld und Überweisung. Auf Wunsch erhalten Sie vor Beginn einen verbindlichen Kostenvoranschlag – ohne Überraschungen am Ende.</p></div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary><span>Bietet ihr einen Hol- und Bringservice?</span><i></i></summary>
+          <div class="faq-item__body"><p>Im Großraum Hildesheim auf Absprache – fragen Sie einfach bei der Terminbuchung danach.</p></div>
+        </details>
+      </div>
+    </section>
+
     <!-- ===== Kontakt ===== -->
     <section class="section contact" id="kontakt">
       <div class="contact__inner">
@@ -350,6 +425,59 @@
           <a class="contact__map-link" href="https://www.openstreetmap.org/search?query=Daimlerring%2039%2C%2031135%20Hildesheim" target="_blank" rel="noopener">Größere Karte ansehen →</a>
         </div>
       </div>
+
+      <div class="contact__form-wrap reveal-up">
+        <div class="contact__form-head">
+          <h3>Schreiben Sie uns</h3>
+          <p>Fahrzeug, Anliegen, Wunschtermin – wir melden uns zurück.</p>
+        </div>
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name">Name *</label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="cf-email">E-Mail *</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="cf-phone">Telefon</label>
+            <input id="cf-phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="cf-vehicle">Fahrzeug</label>
+            <select id="cf-vehicle" name="vehicle">
+              <option>BMW</option>
+              <option>Mercedes-Benz</option>
+              <option>Andere Marke</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="cf-service">Leistung</label>
+            <select id="cf-service" name="service">
+              <option>Inspektion</option>
+              <option>Reparatur</option>
+              <option>Tuning &amp; HiFi</option>
+              <option>Fahrwerk</option>
+              <option>Reifenservice</option>
+              <option>Diagnose &amp; Elektronik</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="cf-msg">Ihre Nachricht *</label>
+            <textarea id="cf-msg" name="message" rows="5" required></textarea>
+          </div>
+          <div class="field field--full field--check">
+            <input id="cf-gdpr" name="gdpr" type="checkbox" required />
+            <label for="cf-gdpr">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu.</label>
+          </div>
+          <div class="field field--full contact__form-actions">
+            <button type="submit" class="btn btn--primary" data-magnetic>Anfrage senden</button>
+            <span class="contact__form-status" id="cfStatus" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -374,7 +502,7 @@
     </div>
     <div class="footer__bottom">
       <span>© <span id="year"></span> Mautsch Fahrzeugtechnik &amp; Tuning. Alle Rechte vorbehalten.</span>
-      <span class="footer__legal"><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+      <span class="footer__legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
     </div>
   </footer>
 </body>

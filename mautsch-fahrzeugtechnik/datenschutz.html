@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz · Mautsch Fahrzeugtechnik &amp; Tuning</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0a0b0e" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav is-scrolled">
+    <a class="nav__brand" href="index.html" aria-label="Zur Startseite">
+      <img class="nav__brand-logo" src="img/mautsch.svg" alt="Mautsch Fahrzeugtechnik &amp; Tuning" />
+    </a>
+    <a href="tel:+4951211772078" class="btn btn--sm" style="margin-left:auto">05121 1772078</a>
+  </header>
+
+  <main class="legal-page">
+    <div class="legal-content">
+      <a href="index.html" class="legal-back">← Zurück zur Startseite</a>
+      <h1>Datenschutzerklärung</h1>
+      <p class="legal-intro">Vorlage gemäß DSGVO. Bitte vor dem Live-Gang prüfen und ggf. durch Hosting-/Tool-Angaben des Betriebs ergänzen.</p>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        <strong>Mautsch Fahrzeugtechnik &amp; Tuning</strong><br>
+        Inhaber: Matthias Mautsch<br>
+        Daimlerring 39, 31135 Hildesheim<br>
+        Telefon: <a href="tel:+4951211772078">05121 1772078</a><br>
+        E-Mail: <a href="mailto:info@mautsch-fahrzeugtechnik.de">info@mautsch-fahrzeugtechnik.de</a>
+      </p>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Rechtsgrundlagen sind insbesondere Art. 6 Abs. 1 lit. a, b und f DSGVO.</p>
+
+      <h2>3. Hosting &amp; Server-Logfiles</h2>
+      <p>Beim Aufruf der Website werden durch den Hosting-Anbieter automatisch Informationen in sog. Server-Logfiles gespeichert (IP-Adresse, Datum/Uhrzeit, abgerufene Seite, übertragene Datenmenge, Browser/OS, Referrer). Die Speicherung erfolgt zur Sicherstellung des Betriebs und der Sicherheit der Website (Art. 6 Abs. 1 lit. f DSGVO). Eine Zusammenführung mit anderen Datenquellen findet nicht statt.<br>
+      Hosting-Anbieter: <span class="legal-todo">[Name &amp; Anschrift des Hosters eintragen]</span></p>
+
+      <h2>4. Kontaktaufnahme (Formular, E-Mail, Telefon, WhatsApp)</h2>
+      <p>Bei einer Kontaktaufnahme verarbeiten wir die von Ihnen übermittelten Daten (Name, Kontaktdaten, Fahrzeug/Anliegen, Nachrichtentext) ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage: Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO. Die Daten werden gelöscht, sobald sie für den Zweck der Erhebung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+      <h2>5. Cookies</h2>
+      <p>Diese Website setzt aktuell <strong>keine Tracking- oder Marketing-Cookies</strong>. Es werden lediglich technisch notwendige Browser-Funktionen (z. B. Schriftarten, lokale Skripte) genutzt.</p>
+
+      <h2>6. Externe Dienste</h2>
+      <p>Die Karten-Einbindung erfolgt über OpenStreetMap (OSMF). Beim Laden der Karte wird Ihre IP-Adresse an OSMF übertragen. Datenschutzerklärung: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">wiki.osmfoundation.org/wiki/Privacy_Policy</a>.<br>
+      <span class="legal-todo">Falls weitere Dienste (z. B. Google Maps, Google Fonts CDN, Analytics, Social-Plugins) eingebunden werden, hier ergänzen.</span></p>
+
+      <h2>7. Ihre Rechte</h2>
+      <ul>
+        <li>Auskunft (Art. 15 DSGVO)</li>
+        <li>Berichtigung (Art. 16 DSGVO)</li>
+        <li>Löschung (Art. 17 DSGVO)</li>
+        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruch (Art. 21 DSGVO)</li>
+        <li>Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft</li>
+      </ul>
+      <p>Zur Ausübung Ihrer Rechte genügt eine formlose Nachricht an die oben genannten Kontaktdaten.</p>
+
+      <h2>8. Beschwerderecht</h2>
+      <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Zuständig ist insbesondere die Landesbeauftragte für den Datenschutz Niedersachsen.</p>
+
+      <hr>
+      <p class="legal-intro">Stand: <span id="date"></span>. Bei wesentlichen Änderungen wird diese Datenschutzerklärung angepasst.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Mautsch Fahrzeugtechnik &amp; Tuning</span>
+      <span class="footer__legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('date').textContent = new Date().toLocaleDateString('de-DE');
+  </script>
+</body>
+</html>
